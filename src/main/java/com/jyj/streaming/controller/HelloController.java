@@ -10,6 +10,7 @@ public class HelloController {
 	
 	@RequestMapping("/hello.do")
 	public String hello(Model model) {
+		System.out.println(1)
 		model.addAttribute("greeting", "안녕하세요");
 		return "hello";
 	}
