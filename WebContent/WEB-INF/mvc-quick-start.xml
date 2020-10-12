@@ -14,7 +14,8 @@
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/"/>
 		<property name="suffix" value=".jsp"/>
-	</bean>		
+	</bean>
 	
-	<bean class="com.jyj.streaming.controller.HelloController"/>
+	<bean id="BroadcastController" class="com.jyj.streaming.controller.BroadcastController"/>
+	<bean id="MainController" class="com.jyj.streaming.controller.MainController"/>
 </beans>
