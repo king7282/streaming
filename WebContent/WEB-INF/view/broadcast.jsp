@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>hello</title>
+<title>JYJ Streaming Service</title>
 </head>
 <body>
-인사말:${greeting}
+
 </body>
 </html>
