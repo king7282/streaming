@@ -4,8 +4,21 @@
 <html>
 <head>
 <title>JYJ Streaming Service</title>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<link href="./css/bootstrap.min.css" rel="stylesheet"/>
+<script src="./js/watch_broadcast.js"></script>
 </head>
 <body>
-${ID}
+
+<div style="text-align:center;">
+ID : <font size="5em">${ID}</font>
+</div>
+
+<div style="text-align:center;padding-top:100px;">
+	<div style="border:1px solid;width:1000px; height:600px;left:50%;margin:0 auto;background-color:black;">
+	
+	</div>
+</div>
 </body>
 </html>
