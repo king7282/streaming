@@ -4,10 +4,10 @@
 <html>
 <head>
 <title>JYJ Streaming Service</title>
-<script src="./js/jquery.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
-<link href="./css/bootstrap.min.css" rel="stylesheet"/>
-<script src="./js/main.js"></script>
+<script src="/streaming/js/jquery.min.js"></script>
+<script src="/streaming/js/bootstrap.min.js"></script>
+<link href="/streaming/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="/streaming/js/main.js"></script>
 </head>
 <body>
 <div style="padding-top:20%; width:100%;text-align:center;">
