@@ -2,6 +2,7 @@ package com.jyj.streaming.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -15,7 +16,7 @@ public class BroadcastController {
 	}
 	
 	@RequestMapping(value="/{ID}", method=RequestMethod.GET)
-	public String watchBroadcast(Model model, String ID) {
+	public String watchBroadcast(Model model, @PathVariable String ID) {
 		model.addAttribute("ID", ID);
 		return "watch_broadcast";
 	}
