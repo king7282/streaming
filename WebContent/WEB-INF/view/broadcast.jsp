@@ -11,7 +11,7 @@
 </head>
 <body>
 <div style="text-align:center;">
-ID : <font size="5em">something provided from server</font>
+ID : <font size="5em">${ID}</font>
 </div>
 
 <div style="text-align:center;padding-top:50px;">
