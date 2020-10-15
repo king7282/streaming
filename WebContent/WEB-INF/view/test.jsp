@@ -11,7 +11,7 @@
 </head>
 <body>
 <div style="text-align:center;">
-ID : <font size="5em">${ID}</font>
+<font size="5em">ID : <input type="text" id="ID" value="${ID}" readonly></font>
 </div>
 
 <div style="text-align:center;padding-top:50px;">

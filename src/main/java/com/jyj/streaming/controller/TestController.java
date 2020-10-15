@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.jyj.streaming.service.BroadcastService;
 
@@ -21,9 +22,10 @@ public class TestController {
 		return "test";
 	}
 	
-	@RequestMapping(value="/{ID}/setScreen", method=RequestMethod.PUT)
-	public void setScreen(@PathVariable String ID) {
-		
+	@RequestMapping(value="/{ID}/setScreen", method=RequestMethod.POST)
+	public void setScreen(@PathVariable String ID, char[] image) {
+		System.out.println(ID + "HI");
+		System.out.println(image.length);
 	}
 	
 }

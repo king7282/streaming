@@ -1,5 +1,6 @@
 $(document).ready(function() {
-	var modal_flag = 1, video_flag = 0;
+	var modal_flag = 1, video_flag = 0, server_ID = $("#ID").val();
+	
 	$("#config").click(function() {
 		$("#broadcast_config_modal").modal("show");
 		
@@ -70,9 +71,29 @@ $(document).ready(function() {
     		image.data = data;
     
     		context.putImageData( image, 0, 0 );
-    
-    		setTimeout( draw, 10, video, context, width, height );
-			console.log(video_flag);
+			
+    		setTimeout( draw, 20, video, context, width, height );
+
+			if(video_flag == 1) {
+				var url = "/streaming/test/" + server_ID + "/setScreen";
+				var arr = Array.from(image.data);
+				console.log(arr);
+				$.ajax({
+					method: "POST",
+					url : url,
+					traditional: true,
+					data:{
+						'image':arr
+					},
+					success : function(data) {
+						console.log("SUCCESS!!");
+					},
+					error : function(e) {
+						console.log("Something wrongs");
+					}
+				});
+			}
+			
   		}
 
   		canvas.style.display = "none";
