@@ -1,12 +1,20 @@
 package com.jyj.streaming.controller;
 
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.HashMap;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.jyj.streaming.service.BroadcastService;
 
@@ -23,9 +31,14 @@ public class TestController {
 	}
 	
 	@RequestMapping(value="/{ID}/setScreen", method=RequestMethod.POST)
-	public void setScreen(@PathVariable String ID, char[] image) {
-		System.out.println(ID + "HI");
-		System.out.println(image.length);
+	@ResponseBody
+	public HashMap<String, Object> setScreen(@PathVariable String ID, String image) throws IOException {
+		HashMap<String, Object> result = new HashMap<>();
+		
+		broadcastService.setImageToVideo(ID, image);
+		
+		result.put("data", "HI");
+		return result;
 	}
 	
 }

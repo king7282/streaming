@@ -29,9 +29,12 @@ $(document).ready(function() {
 	});
 	
 	(function() {
-		var canvas = document.getElementById('canvas'),
-  		context = canvas.getContext('2d'),
-  		video = document.getElementById('video');
+		var canvas = document.getElementById('canvas');
+		canvas.width = 1024;
+		canvas.height = 768;
+		
+  		var context = canvas.getContext('2d');
+  		var video = document.getElementById('video');
   		navigator.getMedia =  navigator.getUserMedia ||
   		navigator.webkitGetUserMedia ||
   		navigator.mozGetuserMedia ||
@@ -75,16 +78,15 @@ $(document).ready(function() {
     		setTimeout( draw, 20, video, context, width, height );
 
 			if(video_flag == 1) {
+				video_flag++;
 				var url = "/streaming/test/" + server_ID + "/setScreen";
-				var arr = Array.from(image.data);
-				console.log(arr);
+				var imageData = canvas.toDataURL("image/png");
+				console.log(image.data);
+				console.log(imageData);
 				$.ajax({
 					method: "POST",
 					url : url,
-					traditional: true,
-					data:{
-						'image':arr
-					},
+					data : {"image" : imageData},
 					success : function(data) {
 						console.log("SUCCESS!!");
 					},

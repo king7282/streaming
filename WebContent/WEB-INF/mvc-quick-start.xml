@@ -26,6 +26,12 @@
 		<property name="suffix" value=".jsp"/>
 	</bean>
 	
+	<beans:bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+	
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="104857600"></beans:property>
+	</beans:bean>
+
 	<context:component-scan base-package="com.jyj.streaming"/>
 	
 	<!--  <sec:http>
