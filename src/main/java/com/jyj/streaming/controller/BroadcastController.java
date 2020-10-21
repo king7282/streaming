@@ -17,7 +17,7 @@ public class BroadcastController {
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public String broadcast(Model model) {
-		String ID = broadcastService.generateBroadcastID();
+		String ID = broadcastService.generateBroadcast();
 		model.addAttribute("ID", ID);
 		return "broadcast";
 	}

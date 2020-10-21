@@ -59,7 +59,7 @@ $(document).ready(function() {
     
     		context.drawImage( video, 0, 0, width, height );
     
-    		image = context.getImageData( 0, 0, width, height );
+ /*   		image = context.getImageData( 0, 0, width, height );
     		data = image.data;
     
     		for( i = 0 ; i < data.length ; i += 4 ) {
@@ -67,22 +67,20 @@ $(document).ready(function() {
       			g = data[i + 1];
       			b = data[i + 2];
       			brightness = ( r + g + b ) / 3;
-      
-      			data[i] = data[i + 1] = data[i + 2] = brightness;
+      			//data[i + 4] = brightness;
+      			//data[i] = data[i + 1] = data[i + 2] = brightness;
     		}
     
     		image.data = data;
     
-    		context.putImageData( image, 0, 0 );
+    		context.putImageData( image, 0, 0 );*/
 			
-    		setTimeout( draw, 20, video, context, width, height );
+    		setTimeout( draw, 10, video, context, width, height );
 
 			if(video_flag == 1) {
-				video_flag++;
 				var url = "/streaming/test/" + server_ID + "/setScreen";
-				var imageData = canvas.toDataURL("image/png");
-				console.log(image.data);
-				console.log(imageData);
+				var imageData = canvas.toDataURL("image/jpg");
+				
 				$.ajax({
 					method: "POST",
 					url : url,
