@@ -15,10 +15,10 @@ $(document).ready(function() {
 	};
 
 	$("#time_apply").click(function() {
-		time = $("#time").val();
+		time = $("#broadcast_time").val();
 	});
 	
-	function get_screen(time) {
+	function get_screen() {
 		var url = "/streaming/Broadcast/" + server_ID + "/getScreen";
 		$.ajax({
 			method : "GET",
@@ -34,8 +34,8 @@ $(document).ready(function() {
 			}
 		});
 			
-		setTimeout( get_screen, 50, time );
+		setTimeout( get_screen, 50);
 	}
 	
-	get_screen(time);
+	get_screen();
 });
