@@ -11,12 +11,13 @@
 </head>
 <body>
 <div style="text-align:center;">
-ID : <font size="5em">${ID}</font>
+<font size="5em">ID : <input type="text" id="ID" value="${ID}" readonly></font>
 </div>
 
 <div style="text-align:center;padding-top:50px;">
-	<div style="border:1px solid;width:1000px; height:600px;left:50%;margin:0 auto;background-color:black;">
-		
+	<div style="border:1px solid;width:1100px; height:800px;left:50%;margin:0 auto;">
+		<video id="video" style="width:1024px;height:768px;padding-top:20px;"autoplay=""></video>
+		<canvas id="canvas" ></canvas>
 	</div>
 </div>
 
